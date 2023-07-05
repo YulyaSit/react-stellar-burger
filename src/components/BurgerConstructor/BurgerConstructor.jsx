@@ -1,6 +1,11 @@
 import constructorStyles from './BurgerConstructor.module.css'
 import { ConstructorElement, DragIcon, Button, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import React from 'react'
+import { ingredientPropType } from '../../utils/prop-types'
+import PropTypes from "prop-types";
+BurgerConstructor.propTypes = {
+    element: PropTypes.arrayOf(ingredientPropType.isRequired)
+}
 function BurgerConstructor({ element }) {
     const buns = React.useMemo(() => element.find((m) => m.type === "bun"), [element])
     return (
@@ -16,7 +21,7 @@ function BurgerConstructor({ element }) {
                 <ul className={`${constructorStyles.list}  custom-scroll`}>
                     {element.map((item) => {
                         return item.type !== "bun" && (
-                            <li className={constructorStyles.item}>
+                            <li key={item._id} className={constructorStyles.item}>
                                 <DragIcon type="primary" />
                                 <ConstructorElement
                                     text={item.name}

@@ -2,8 +2,8 @@ import ingredientsStyle from './BurgerIngredients.module.css'
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components'
 import React from 'react'
 import IngredientsList from '../IngredientsList/IngredientsList'
-
-
+import PropTypes from "prop-types";
+import { ingredientPropType } from '../../utils/prop-types';
 function BurgerIngredients( { ingredientsBurger }) {
     const [current, setCurrent] = React.useState('one')
     const buns = React.useMemo(() => ingredientsBurger.filter((m) => m.type === "bun"), [ingredientsBurger]);
@@ -13,14 +13,14 @@ function BurgerIngredients( { ingredientsBurger }) {
                 <section className={ingredientsStyle.ingredientsContainer}>
                     <h2 className={`${ingredientsStyle.title} text text_type_main-large`}>Соберите бургер</h2>
                     <div className={ingredientsStyle.tab}>
-                        <Tab value="one" active={current === 'one'} onClick={setCurrent}>
-                            One
+                        <Tab value="One" active={current === 'one'} onClick={setCurrent}>
+                            Булки
                         </Tab>
-                        <Tab value="two" active={current === 'two'} onClick={setCurrent}>
-                            Two
+                        <Tab value="Two" active={current === 'two'} onClick={setCurrent}>
+                            Соусы
                         </Tab>
-                        <Tab value="three" active={current === 'three'} onClick={setCurrent}>
-                            Three
+                        <Tab value="Three" active={current === 'three'} onClick={setCurrent}>
+                            Начинки
                         </Tab>
                     </div>
                     <div className={`${ingredientsStyle.container} custom-scroll`}>
@@ -53,4 +53,7 @@ function BurgerIngredients( { ingredientsBurger }) {
     )
 }
 
+BurgerIngredients.propTypes = {
+    ingredientsBurger: PropTypes.arrayOf(ingredientPropType)
+}
 export default BurgerIngredients
