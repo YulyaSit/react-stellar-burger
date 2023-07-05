@@ -6,12 +6,9 @@ import IngredientsList from '../IngredientsList/IngredientsList'
 
 function BurgerIngredients( { ingredientsBurger }) {
     const [current, setCurrent] = React.useState('one')
-    const bun = "bun"
-    const buns = React.useMemo(() => ingredientsBurger.filter((m) => m.type === bun), [ingredientsBurger]);
-    const sauce = "sauce"
-    const sauces = React.useMemo(() => ingredientsBurger.filter((m) => m.type === sauce), [ingredientsBurger])
-    const filling = "main"
-    const fillings = React.useMemo(() => ingredientsBurger.filter((m) => m.type === filling), [ingredientsBurger])
+    const buns = React.useMemo(() => ingredientsBurger.filter((m) => m.type === "bun"), [ingredientsBurger]);
+    const sauces = React.useMemo(() => ingredientsBurger.filter((m) => m.type === "sauce"), [ingredientsBurger])
+    const fillings = React.useMemo(() => ingredientsBurger.filter((m) => m.type === "main"), [ingredientsBurger])
     return (
                 <section className={ingredientsStyle.ingredientsContainer}>
                     <h2 className={`${ingredientsStyle.title} text text_type_main-large`}>Соберите бургер</h2>
