@@ -5,7 +5,7 @@ function AppHeader() {
         <header className={headerStyles.header}>
             <nav className={headerStyles.navigation}>
                 <ul className={headerStyles.list}>
-                    <li className={headerStyles.item1}><BurgerIcon type="primary" /><p className={`${headerStyles.item} text text_type_main-small`}>Конструтор</p></li>
+                    <li className={headerStyles.item1}><BurgerIcon type="primary" /><p className={`${headerStyles.item} text text_type_main-small`}>Конструктор</p></li>
                     <li className={headerStyles.item2}><ListIcon type="secondary" /><p className={`${headerStyles.item} text text_type_main-small text_color_inactive`}>Лента заказов</p></li>
                 </ul>
                 <Logo />
