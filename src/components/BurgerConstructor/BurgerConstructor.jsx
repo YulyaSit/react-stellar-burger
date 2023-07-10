@@ -52,11 +52,11 @@ function BurgerConstructor({ element }) {
             </div>
             <div className={constructorStyles.items}>
                 <span className={`${constructorStyles.price} text text_type_main-large mr-2`}>18743<CurrencyIcon type="primary" /></span>
-                <Button htmlType="button" type="primary" size="large">
+                <Button onClick={popupOpen} htmlType="button" type="primary" size="large">
                     Оформить заказ
                 </Button>
             </div>
-            {active && (<Modal onClose={popupClose}>
+            {active && (<Modal close={popupClose}>
                 <OrderDetails  />
             </Modal>)}
         </section>

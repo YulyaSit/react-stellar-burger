@@ -12,3 +12,19 @@ export const ingredientPropType = PropTypes.shape({
   carbohydrates: PropTypes.number.isRequired,
   __v: PropTypes.number.isRequired
 });
+
+
+export const ingredientsItemListPropType = PropTypes.shape({
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired
+})
+
+export const ingredientsDetailsPopupPropType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  calories: PropTypes.number.isRequired,
+  proteins: PropTypes.number.isRequired,
+  carbohydrates: PropTypes.number.isRequired,
+  fat: PropTypes.number.isRequired
+})

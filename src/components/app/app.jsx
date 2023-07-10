@@ -4,17 +4,16 @@ import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import React from 'react'
 import { getIngredients } from '../../utils/api/api.js'
-import OrderDetails from "../OrderDetails/OrderDetails";
 
 function App() {
   const [ingredients, setIngredients] = React.useState([])
   React.useEffect(() => {
     getIngredients()
       .then((result) => {
-      (setIngredients(result.data))
+        (setIngredients(result.data))
       })
       .catch((err) => {
-      console.log(err)
+        console.log(err)
       });
     getIngredients()
   }, [])
