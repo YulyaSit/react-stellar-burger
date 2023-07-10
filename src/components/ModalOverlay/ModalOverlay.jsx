@@ -2,9 +2,9 @@ import React from 'react'
 import overlayStyles from './ModalOverlay.module.css'
 import ReactDOM from 'react-dom'
 
-function ModalOverlay() {
+function ModalOverlay({onClose}) {
     return(
-        <div className={overlayStyles.overlay}></div>
+        <div className={overlayStyles.overlay} onClick={onClose}></div>
     )
 }
 

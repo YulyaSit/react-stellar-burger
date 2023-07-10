@@ -57,7 +57,7 @@ function BurgerConstructor({ element }) {
                 </Button>
             </div>
             {active && (<Modal onClose={popupClose}>
-                <OrderDetails />
+                <OrderDetails  />
             </Modal>)}
         </section>
     )

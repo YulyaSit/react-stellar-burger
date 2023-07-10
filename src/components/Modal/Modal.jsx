@@ -6,7 +6,7 @@ import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 const root = document.getElementById('modal')
 
 
-function Modal({ title, children}) {
+function Modal({ title, children, onClose}) {
     return ReactDOM.createPortal(
         <>
         <div className={stylesModal.modal}>
@@ -16,7 +16,7 @@ function Modal({ title, children}) {
             </div>
             {children}
         </div>
-        <ModalOverlay />
+        <ModalOverlay onClose={onClose} />
         </>,
         root
     )
