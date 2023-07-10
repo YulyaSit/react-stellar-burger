@@ -2,12 +2,22 @@ import constructorStyles from './BurgerConstructor.module.css'
 import { ConstructorElement, DragIcon, Button, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import React from 'react'
 import { ingredientPropType } from '../../utils/prop-types'
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
+import OrderDetails from '../OrderDetails/OrderDetails';
+import Modal from '../Modal/Modal';
 BurgerConstructor.propTypes = {
     element: PropTypes.arrayOf(ingredientPropType.isRequired)
 }
 function BurgerConstructor({ element }) {
-    const buns = React.useMemo(() => element.find((m) => m.type === "bun"), [element])
+    const buns = React.useMemo(() => element.length > 0 && element.find((m) => m.type === "bun"), [element])
+    const [active, setActive] = React.useState(false);
+    const popupClose = () => {
+        setActive(false)
+    }
+
+    const  popupOpen = () => {
+        setActive(true)
+    }
     return (
         <section className={`${constructorStyles.container}`}>
             <div className={`${constructorStyles.content} pl-4 pr-4 pb-5 pt-5`}>
@@ -46,6 +56,9 @@ function BurgerConstructor({ element }) {
                     Оформить заказ
                 </Button>
             </div>
+            {active && (<Modal onClose={popupClose}>
+                <OrderDetails />
+            </Modal>)}
         </section>
     )
 }

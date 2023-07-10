@@ -2,9 +2,9 @@ import ingredientsStyle from '../BurgerIngredients/BurgerIngredients.module.css'
 import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components'
 import PropTypes from "prop-types";
 import { ingredientPropType } from '../../utils/prop-types';
-IngredientsList.propTypes = {
-    item: PropTypes.arrayOf(ingredientPropType.isRequired)
-}  
+/*IngredientsList.propTypes = {
+    item: PropTypes.objectOf(ingredientPropType)
+} */ 
 
 function IngredientsList({ item }) {
     return (
