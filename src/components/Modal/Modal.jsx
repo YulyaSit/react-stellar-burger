@@ -22,7 +22,6 @@ function Modal({ title, children, close }) {
       document.removeEventListener("keydown", closePopupEsc);
     };
   }, [close]);
-  if (!close) return null
   return ReactDOM.createPortal(
     <>
       <ModalOverlay closeOverlay={close} />
